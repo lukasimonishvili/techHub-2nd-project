@@ -6,6 +6,10 @@ let LogIn = {
     mailStatus: false,
     passwordStatus: false,
     userIndex: 0,
+    clearInputs: function(){
+        LogIn.mail.value = "";
+        LogIn.password.value = "";
+    },
     action: function(){
         LogIn.button.addEventListener("click", function(){
             for(let i = 0; i < Users.storage.length; i++){
@@ -23,8 +27,10 @@ let LogIn = {
                 LogIn.passwordStatus = false;
                 LogIn.mailStatus = false;
                 localStorage.setItem("userIndex", LogIn.userIndex);
+                LogIn.clearInputs();
             }else{
                 alert("Wrong mail or password");
+                LogIn.clearInputs();
             }
         });
     },

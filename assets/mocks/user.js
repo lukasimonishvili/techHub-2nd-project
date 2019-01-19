@@ -17,9 +17,8 @@ let indexZeroUser = [
                 chat: []
             }
         ],
-        profilePicture: [""],
-        coverPicture: [""],
-        posts: []
+        profilePicture: [],
+        coverPicture: [],
     }
 ]
 

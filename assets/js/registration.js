@@ -8,6 +8,15 @@ let Registration = {
     birthMonth: document.getElementById("month"),
     birthDay: document.getElementById("day"),
     gender: "",
+    clearInputs: function(){
+        Registration.name.value = "";
+        Registration.lastName.value = "";
+        Registration.mail.value = "";
+        Registration.password.value = "";
+        Registration.birthYear.value = "Year";
+        Registration.birthMonth.value = "Month";
+        Registration.birthDay.value = "Day"
+    },
     genderRender: function(){
         let element = document.getElementsByName("gender");
         for(let i = 0; i < element.length; i++){
@@ -42,16 +51,17 @@ let Registration = {
                         },
                         gender: Registration.gender,
                         friends: [],
-                        profilePicture: [""],
-                        coverPicture: [""],
-                        posts: []
+                        profilePicture: [],
+                        coverPicture: [],
                     }
                 );
                 Registration.mailCheck = true;
                 Users.resetStorage();
+                Registration.clearInputs();
                 alert("You are now registred");
             }else{
-                alert("registration wend wrong");
+                alert("registration went wrong");
+                Registration.clearInputs();
             }
         });
     }
