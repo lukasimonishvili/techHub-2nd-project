@@ -83,6 +83,7 @@ let Pictures = {
             Pictures.renderProfile();
             Pictures.checkProfile();
             Pictures.changePostProfile();
+            Users.friendsRender();
         });
         Pictures.cover.addEventListener("click", function(){
             let element = prompt("Enter cover link");

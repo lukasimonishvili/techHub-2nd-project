@@ -56,6 +56,7 @@ let Registration = {
                     }
                 );
                 Registration.mailCheck = true;
+                Users.friendsRender();
                 Users.resetStorage();
                 Registration.clearInputs();
                 alert("You are now registred");
