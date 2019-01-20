@@ -7,14 +7,6 @@
 }
 
 @font-face {
-    font-family: 'SFProDisplay-Thin';
-    src: url('../fonts/SFProDisplay-Thin.woff2') format('woff2'),
-        url('SFProDisplay-Thin.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'SFUIText-Regular';
     src: url('../fonts/SFUIText-Regular.woff2') format('woff2'),
         url('SFUIText-Regular.woff') format('woff');
@@ -38,37 +30,6 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'SFUIText-Light';
-    src: url('../fonts/SFUIText-Light.woff2') format('woff2'),
-        url('SFUIText-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SFProText-Light';
-    src: url('../fonts/SFProText-Light.woff2') format('woff2'),
-        url('SFProText-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SFProDisplay-Regular';
-    src: url('../fonts/SFProDisplay-Regular.woff2') format('woff2'),
-        url('SFProDisplay-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SFProDisplay-Semibold';
-    src: url('../fonts/SFProDisplay-Semibold.woff2') format('woff2'),
-        url('SFProDisplay-Semibold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-}
 
 @font-face {
     font-family: 'SFUIText-Medium';
@@ -88,8 +49,6 @@
 
 @font-face {
     font-family: 'Freight';
-    src: url('../fonts/Freight-SansBold.woff2') format('woff2'),
-        url('../fonts/Freight-SansBold.woff') format('woff');
+    src: url("../fonts/Freight-SansBold.woff2") format("woff2"), url("../fonts/Freight-SansBold.woff") format("woff");
     font-weight: bold;
-    font-style: normal;
-}
+    font-style: normal; }

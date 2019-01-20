@@ -113,6 +113,38 @@
                 border-bottom: $logined-main-content-border;
                 border-top: $logined-main-content-border;
                 overflow-y: scroll;
+
+                &__left{
+                    display: block;
+                    float: left;
+                    clear: both;
+                    margin: .4rem 0;
+                    margin-left: 1.8rem;
+                    padding: .6rem 1rem;
+                    font-size: 1.3rem;
+                    line-height: 1.6rem;
+                    font-family: $sfui-text-medium;
+                    max-width: 129px;
+                    color: #444950;
+                    background-color: #f1f0f0;
+                    border-radius: 48px;
+                }
+
+                &__right{
+                    display: block;
+                    float: right;
+                    clear: both;
+                    margin: .4rem 0;
+                    margin-right: 1.8rem;
+                    padding: .6rem 1rem;
+                    font-size: 1.3rem;
+                    line-height: 1.6rem;
+                    font-family: $sfui-text-medium;
+                    max-width: 129px;
+                    color: #fff;
+                    background-color: #0084ff;
+                    border-radius: 48px;
+                }
             }
 
             &__input{
@@ -125,8 +157,7 @@
                 padding-left: .8rem;
             }
 
-            &::before{
-                content: "";
+            &__send{
                 position: absolute;
                 width: 16px;
                 height: 16px;

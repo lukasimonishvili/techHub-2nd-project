@@ -8,6 +8,7 @@ let Registration = {
     birthMonth: document.getElementById("month"),
     birthDay: document.getElementById("day"),
     gender: "",
+    friendList: [],
     clearInputs: function(){
         Registration.name.value = "";
         Registration.lastName.value = "";
@@ -24,6 +25,47 @@ let Registration = {
                 Registration.gender = element[i].value;
                 break;
             }
+        }
+    },
+    allForOne: function(){
+        for(let k = 0; k < Users.storage.length; k++){
+            var profileSrc = "";
+            if(Users.storage[k].profilePicture.length > 0){
+                profileSrc = Users.storage[k].profilePicture[Users.storage[k].profilePicture.length - 1];
+            }
+            Registration.friendList.push(
+                {
+                    name: Users.storage[k].name,
+                    lastName: Users.storage[k].lastName,
+                    eMail: Users.storage[k].eMail,
+                    chat: [],
+                    profilePicture: profileSrc,
+                }
+            );
+        };
+        return Registration.friendList;
+    },
+    addforNewObject: function(){
+        Users.storage[Users.storage.length - 1].friends = Registration.allForOne();
+        Users.resetStorage();
+        Registration.friendList = [];
+    },
+    addNewforAll: function(){
+        var profileSrc = "";
+        if(Users.storage[Users.storage.length - 1].profilePicture.length > 0){
+            profileSrc = Users.storage[Users.storage.length - 1].profilePicture[Users.storage[Users.storage.length - 1].profilePicture.length - 1];
+        }
+        for(let i = 0; i < Users.storage.length - 1; i++){
+            Users.storage[i].friends.push(
+                {
+                    name: Users.storage[Users.storage.length - 1].name,
+                    lastName: Users.storage[Users.storage.length - 1].lastName,
+                    eMail: Users.storage[Users.storage.length - 1].eMail,
+                    chat: [],
+                    profilePicture: profileSrc,
+                }
+            );
+            Users.resetStorage();
         }
     },
     password: document.getElementById("password"),
@@ -56,7 +98,8 @@ let Registration = {
                     }
                 );
                 Registration.mailCheck = true;
-                Users.friendsRender();
+                Registration.addforNewObject();
+                Registration.addNewforAll();
                 Users.resetStorage();
                 Registration.clearInputs();
                 alert("You are now registred");

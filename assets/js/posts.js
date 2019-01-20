@@ -27,7 +27,7 @@ let Posts = {
         return post;
     },
     draw: function(){
-        if(Statuses.storage.length !== 0){
+        if(Statuses.storage !== null){
             Posts.box.innerHTML = "";
             for(let i = 0; i < Statuses.storage.length; i++){
                 Posts.box.appendChild(Posts.strucure(Statuses.storage[i].date, Statuses.storage[i].content, Statuses.storage[i].eMail, Statuses.storage[i].profilePicture, Statuses.storage[i].author));
